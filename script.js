@@ -5,10 +5,10 @@ function compute()
     y = document.getElementById("years").value;
 
     i = p*((r/100)*y);
-    document.getElementById("result").innerHTML = "If you deposit " + p + ",<br />" + 
+    document.getElementById("result").innerHTML = "<br/>" + "If you deposit " + p + ",<br />" + 
     "at an interest rate of " + r + ".<br />" +
     "You will receive an amount of " + i.toFixed(0) + ",<br />" +
-    "in the year " + y;
+    "in the year " + y + " <br />";
     //console.log(i);
 }
 
