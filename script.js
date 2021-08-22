@@ -2,21 +2,26 @@ function Compute() {
   var p = document.getElementById("principal").value;
   var r = document.getElementById("rate").value;
   var y = document.getElementById("years").value;
-  var year = new Date().getFullYear();
+  var year = new Date().getFullYear() + parseInt(y);
   console.log("XD");
 
+  if(parseInt(p) > 0){
   var i = p * ((r / 100) * y);
   document.getElementById("result").innerHTML =
-    "If you deposit " +
+    "<br />If you deposit <mark>" +
     p +
-    ",<br />" +
-    "at an interest rate of " +
+    "</mark>,<br />" +
+    "at an interest rate of <mark>" +
     r +
-    ".<br />" +
-    "You will receive an amount of " +
+    "%</mark>.<br />" +
+    "You will receive an amount of <mark>" +
     i.toFixed(0) +
-    ",<br />" +
-    "in the year " +
+    "</mark>,<br />" +
+    "in the year <mark>" +
     year +
-    " <br />";
+    "</mark> <br />";
+  } else {
+    alert("Amount must be a positive number!");
+    document.getElementById("principal").focus();
+  }
 }
